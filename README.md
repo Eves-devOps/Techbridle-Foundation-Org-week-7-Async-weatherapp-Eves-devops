@@ -54,4 +54,4 @@ It fetches live weather data using the **Open-Meteo API** and demonstrates pract
 ![Weatherapp ScreenShot](assets/image/weatherapp.png)
 ## Live Demo Deployment
 This project is live at Github pages
-![Weather Dashboard](https://eves-devops.github.io/Week-7-Asnyc/)
+![Weather Dashboard](https://eves-devops.github.io/Techbridle-Foundation-Org-week-7-Async-weatherapp-Eves-devops/)
