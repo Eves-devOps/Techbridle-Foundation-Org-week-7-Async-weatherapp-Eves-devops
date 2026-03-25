@@ -73,18 +73,27 @@ else if (code <= 75) body.classList.add("snowy");
 
 
   // Forecast (5 days)
-  forecastDiv.innerHTML = "";
-  for (let i = 0; i < 5; i++) {
-    const day = document.createElement('div');
-    day.className = "forecast-day";
-    day.innerHTML = `
-      <h4>Day ${i+1}</h4>
-      <p>${getCondition(weather.daily.weathercode[i])}</p>
-      <p>Max: ${weather.daily.temperature_2m_max[i]}℃</p>
-      <p>Min: ${weather.daily.temperature_2m_min[i]}℃</p>
-    `;
-    forecastDiv.appendChild(day);
-  }
+  // Forecast (5 days)
+forecastDiv.innerHTML = "";
+for (let i = 0; i < 5; i++) {
+  const day = document.createElement('div');
+  day.className = "forecast-day";
+
+  // Format date nicely
+  const date = new Date(weather.daily.time[i]);
+  const options = { weekday: 'short', month: 'short', day: 'numeric' };
+  const dateStr = date.toLocaleDateString(undefined, options);
+
+  day.innerHTML = `
+    <h4>${dateStr}</h4>
+    <p>${getCondition(weather.daily.weathercode[i])}</p>
+    <p>Max: ${weather.daily.temperature_2m_max[i]}℃</p>
+    <p>Min: ${weather.daily.temperature_2m_min[i]}℃</p>
+  `;
+  forecastDiv.appendChild(day);
+}
+
+  addRecentSearch(location.name);
 };
 
 let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];

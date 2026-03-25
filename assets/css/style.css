@@ -148,3 +148,26 @@ body {
   animation: spin 1s ease-in-out infinite;
   margin: 20px auto;
 }
+.forecast-day {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.forecast-day:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 1);
+}
+
+.forecast-day h4 {
+  margin-bottom: 8px;
+  color: #8B0000;
+}
+
+.forecast-day p {
+  margin: 4px 0;
+  font-size: 14px;
+}
